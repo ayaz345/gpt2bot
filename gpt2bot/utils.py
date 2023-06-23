@@ -192,7 +192,7 @@ def build_ranker_dict(**kwargs):
     depth_weight = kwargs.pop('depth_weight', None)
     width_weight = kwargs.pop('width_weight', None)
 
-    ranker_dict = dict()
+    ranker_dict = {}
     if human_vs_rand_weight is not None:
         ranker_dict['human_vs_rand'] = dict(
             pipeline=load_pipeline('sentiment-analysis', model='microsoft/DialogRPT-human-vs-rand', **kwargs),

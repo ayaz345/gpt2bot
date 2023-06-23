@@ -59,7 +59,7 @@ def translate_message_to_gif(message, **chatbot_params):
         's': message,
         'weirdness': chatbot_params.get('giphy_weirdness', 5)
     }
-    url = "http://api.giphy.com/v1/gifs/translate?" + urlencode(params)
+    url = f"http://api.giphy.com/v1/gifs/translate?{urlencode(params)}"
     response = requests_retry_session().get(url)
     return response.json()['data']['images']['fixed_height']['url']
 
